@@ -36,10 +36,11 @@ public class InfosActivity extends AppCompatActivity {
 
         this.imovel = (Imovel) getIntent().getSerializableExtra("imovel");
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
-        ((TextView) findViewById(R.id.backdrop_title)).setText(imovel.getNome());
+        //TODO : TAIS REFERENCIANDO AQUI O XML QUE FOI COMENTADO
+        ((TextView) findViewById(R.id.infos_nome)).setText(imovel.getNome());
         ((TextView) findViewById(R.id.detail_valor)).setText("Preço: R$" + String.valueOf(imovel.getValor()));
         ((TextView) findViewById(R.id.detail_endereco)).setText("Endereço: " + imovel.getEndereco());
         ((TextView) findViewById(R.id.detail_numero_quartos)).setText("Número de quartos: " + String.valueOf(imovel.getNumeroQuartos()));
@@ -47,7 +48,7 @@ public class InfosActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.detail_prazo_financiamento)).setText("Prazo de financiamento: " + String.valueOf(imovel.getPrazoFinanciamento()) + " meses");
 
         try {
-            Glide.with(this).load(this.imovel.getFotoPath()).into((ImageView) findViewById(R.id.backdrop));
+            Glide.with(this).load(this.imovel.getFotoPath()).into((ImageView) findViewById(R.id.imagem_imovel));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -86,7 +87,7 @@ public class InfosActivity extends AppCompatActivity {
                     youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
 
                     //cue the 1st video by default
-                    youTubePlayer.cueVideo("lLQRd4f3sks");
+                    youTubePlayer.cueVideo(imovel.getVideoURL());
                 }
             }
 

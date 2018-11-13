@@ -29,15 +29,15 @@ public class ImovelAdapter extends RecyclerView.Adapter<ImovelAdapter.MyViewHold
         View view = LayoutInflater.from(context).inflate(R.layout.card_imovel, parent, false);
         final MyViewHolder holder = new MyViewHolder(view);
 
-//        holder.cardViewItem.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(context, InfosActivity.class);
-//                //TODO
-//                intent.putExtra("imovel", imoveis.get(holder.getAdapterPosition()));
-//                context.startActivity(intent);
-//            }
-//        });
+        holder.cardViewItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, InfosActivity.class);
+                //TODO
+                intent.putExtra("imovel", imoveis.get(holder.getAdapterPosition()));
+                context.startActivity(intent);
+            }
+        });
 
         return holder;
     }

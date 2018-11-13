@@ -50,14 +50,14 @@ public class NewsFragment extends Fragment {
      */
     private void prepararNoticias() {
         Noticia noticia = new Noticia(
-                "Residencial Tarumã é lançado!",
+                "Novo Residencial perto de você!",
                 "Venha conhecer nosso mais novo empreendimento."
         );
         noticias.add(noticia);
 
         noticia = new Noticia(
-                "Residencial João de Barro sob avaliação do Corpo de Bombeiros",
-                "Estamos garantindo a segurança do seu novo lar."
+                "As melhores condições para você adiquirir um imovel hoje mesmo",
+                "Marque uma visita."
         );
         noticias.add(noticia);
 

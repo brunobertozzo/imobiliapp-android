@@ -5,9 +5,10 @@
     <string name="title_notifications">Notifications</string>
     <string name="toolbar_subtitle">Imoveis</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">A BRB Construtora é uma empresa de construção civil fundada em 2006, em Florianópolis/SC. Desde então tem exercido suas atividades sempre de maneira pautada nas suas possibilidades e tamanho. A empresa iniciou sua operação no seu ano de fundação executando reformas residenciais e comerciais. Nesses 10 anos, participou ativamente de obras que são referência na construção civil e que, juntamente com seu fundador, possui mais de 100 mil m² de obras registrados no CREA/SC, acumulando assim um vasto currículo de área construída e unidades entregues.
+    </string>
 
-
+    <string name="title_more">Sobre</string>
     <string name="title_news">Notícias</string>
     <string name="title_catalog">Catálogo</string>
     <string name="title_map">Mapa</string>

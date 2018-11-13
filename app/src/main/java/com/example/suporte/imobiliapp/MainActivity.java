@@ -27,15 +27,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         navigationView = (BottomNavigationView) findViewById(R.id.navigation);
         navigationView.setOnNavigationItemSelectedListener(this);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
-        navigationView.setSelectedItemId(R.id.navigation_imoveis);
-        Fragment catalogFragment = ImoveisFragment.newInstance();
-        openFragment(catalogFragment);
+        navigationView.setSelectedItemId(R.id.navigation_noticias);
+        Fragment newsFragment = NewsFragment.newInstance();
+        openFragment(newsFragment);
 
         try {
-            Glide.with(this).load(R.drawable.imovel_1).into((ImageView) findViewById(R.id.backdrop));
+            Glide.with(this).load(R.drawable.imovel_1).into((ImageView) findViewById(R.id.imagem_imovel));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -43,19 +43,22 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        TextView backdropSubtitle = (TextView) findViewById(R.id.backdrop_subtitle);
 
         switch (item.getItemId()) {
             case R.id.navigation_noticias: {
-                backdropSubtitle.setText(R.string.title_news);
                 Fragment newsFragment = NewsFragment.newInstance();
                 openFragment(newsFragment);
                 break;
             }
             case R.id.navigation_imoveis: {
-                backdropSubtitle.setText(R.string.title_catalog);
                 Fragment catalogFragment = ImoveisFragment.newInstance();
                 openFragment(catalogFragment);
+                break;
+            }
+
+            case R.id.navigation_more: {
+                Fragment moreFragment = MoreFragment.newInstance();
+                openFragment(moreFragment);
                 break;
             }
         }

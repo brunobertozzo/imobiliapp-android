@@ -12,15 +12,18 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private Imovel imovel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        this.imovel = (Imovel) getIntent().getSerializableExtra("imovel");
     }
 
 
@@ -37,9 +40,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng imovelCoords = new LatLng(Double.parseDouble(this.imovel.getLat()), Double.parseDouble(this.imovel.getLng()));
+        mMap.addMarker(new MarkerOptions().position(imovelCoords).title(this.imovel.getNome()));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(imovelCoords));
     }
 }
