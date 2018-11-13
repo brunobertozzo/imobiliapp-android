@@ -2,6 +2,7 @@ package com.example.suporte.imobiliapp;
 
 public class Imovel {
 
+    private int id;
     private String nome;
     private int valor;
     private String endereco;
@@ -10,7 +11,8 @@ public class Imovel {
     private int prazoFinanciamento;
     private int fotoPath;
 
-    public Imovel(String nome,
+    public Imovel(int id,
+                  String nome,
                   int valor,
                   String endereco,
                   int numeroQuartos,
@@ -18,6 +20,7 @@ public class Imovel {
                   int prazoFinanciamento,
                   int fotoPath
     ) {
+        this.id = id;
         this.nome = nome;
         this.valor = valor;
         this.endereco = endereco;
@@ -25,6 +28,14 @@ public class Imovel {
         this.dataEntrega = dataEntrega;
         this.prazoFinanciamento = prazoFinanciamento;
         this.fotoPath = fotoPath;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {

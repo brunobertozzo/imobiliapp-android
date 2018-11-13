@@ -23,7 +23,7 @@ import java.util.List;
 public class ImoveisFragment extends Fragment {
 
     private RecyclerView recyclerView;
-    private CardAdapter adapter;
+    private ImovelAdapter adapter;
     private List<Imovel> imoveis;
 
     @Override
@@ -36,7 +36,7 @@ public class ImoveisFragment extends Fragment {
 
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
         imoveis = new ArrayList<>();
-        adapter = new CardAdapter(getActivity(), imoveis);
+        adapter = new ImovelAdapter(getContext(), imoveis);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 2);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.addItemDecoration(new ImoveisFragment.GridSpacingItemDecoration(2, dpToPx(10), true));
@@ -57,6 +57,7 @@ public class ImoveisFragment extends Fragment {
         };
 
         Imovel imovel = new Imovel(
+                1,
                 "Res. Tarumã",
                 200000,
                 "Rua José Bonifácio",
@@ -68,6 +69,7 @@ public class ImoveisFragment extends Fragment {
         imoveis.add(imovel);
 
         imovel = new Imovel(
+                2,
                 "Res. João de Barro",
                 500000,
                 "Rua João de Barro",
@@ -79,6 +81,7 @@ public class ImoveisFragment extends Fragment {
         imoveis.add(imovel);
 
         imovel = new Imovel(
+                3,
                 "Res. Mário Quintana",
                 375000,
                 "Rua Mario Quintana",
@@ -90,6 +93,7 @@ public class ImoveisFragment extends Fragment {
         imoveis.add(imovel);
 
         imovel = new Imovel(
+                4,
                 "Casa de frente para o mar",
                 450000,
                 "Avenida Beira Mar",
@@ -101,6 +105,7 @@ public class ImoveisFragment extends Fragment {
         imoveis.add(imovel);
 
         imovel = new Imovel(
+                5,
                 "Casa rústica",
                 225000,
                 "Avenida Campo Largo",
